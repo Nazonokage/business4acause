@@ -4,6 +4,7 @@ import Navbar from './components/Navbar'
 import LandingPage from './pages/LandingPage'
 import RealtyPage from './pages/RealtyPage'
 import FoodTradingPage from './pages/FoodTradingPage'
+import FoodProductsPage from './pages/FoodProductsPage'
 import AboutPage from './pages/AboutPage'
 import ContactPage from './pages/ContactPage'
 import './App.css'
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<LandingPage />} />
           <Route path="/realty" element={<RealtyPage />} />
           <Route path="/food-trading" element={<FoodTradingPage />} />
+          <Route path="/food-trading/products" element={<FoodProductsPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>

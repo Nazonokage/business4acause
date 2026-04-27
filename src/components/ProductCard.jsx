@@ -1,8 +1,14 @@
-export default function ProductCard({ name, description }) {
+export default function ProductCard({ name, description, image, onOpen }) {
   return (
-    <article className="product-card">
+    <button
+      type="button"
+      className="product-card"
+      onClick={onOpen}
+    >
+      <img src={image} alt={name} className="product-card__image" />
       <h3>{name}</h3>
       <p>{description}</p>
-    </article>
+      <span className="product-card__hint">Click to view details</span>
+    </button>
   )
 }
