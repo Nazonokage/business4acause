@@ -1,9 +1,11 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import ParticlesBackground from './components/ParticlesBackground'
 import Navbar from './components/Navbar'
-import WelcomePage from './pages/WelcomePage'
-import GetStartedPage from './pages/GetStartedPage'
+import LandingPage from './pages/LandingPage'
+import RealtyPage from './pages/RealtyPage'
+import FoodTradingPage from './pages/FoodTradingPage'
 import AboutPage from './pages/AboutPage'
+import ContactPage from './pages/ContactPage'
 import './App.css'
 
 function App() {
@@ -13,9 +15,11 @@ function App() {
       <Navbar />
       <div className="content-wrapper">
         <Routes>
-          <Route path="/" element={<WelcomePage />} />
-          <Route path="/get-started" element={<GetStartedPage />} />
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/realty" element={<RealtyPage />} />
+          <Route path="/food-trading" element={<FoodTradingPage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
         </Routes>
       </div>
     </BrowserRouter>
