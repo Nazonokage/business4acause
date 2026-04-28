@@ -49,15 +49,17 @@ export default function FoodProductsPage() {
   const closeModal = () => setModalProduct(null)
 
   return (
-    <section className="info-page">
-      <div className="info-page__panel">
-        <h1>AE Food Trading Products</h1>
-        <p>
+    <section className="px-6 pb-16 pt-14">
+      <div className="mx-auto max-w-5xl rounded-2xl border border-[#8b5e3c2e] bg-[#f5ecd7ad] p-8">
+        <h1 className="mb-4 text-[clamp(32px,5vw,48px)] font-bold text-[#3C2415]">
+          AE Food Trading Products
+        </h1>
+        <p className="mb-3 leading-7 text-[rgba(60,36,21,0.8)]">
           Browse our current placeholder catalog below. Product names, images, and full specs will
           be replaced with finalized inventory details in the next update.
         </p>
 
-        <div className="product-grid">
+        <div className="mt-4 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
           {placeholderProducts.map((product) => (
             <ProductCard
               key={product.id}
@@ -69,7 +71,7 @@ export default function FoodProductsPage() {
           ))}
         </div>
 
-        <p className="info-page__note">
+        <p className="mt-4 italic text-[rgba(60,36,21,0.7)]">
           Need a specific item? Contact us and we can prepare a custom supply list.
         </p>
       </div>
