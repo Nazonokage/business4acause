@@ -1,5 +1,6 @@
 import { useMemo, useState, useEffect, useRef } from 'react'
 import propertyImages from '../assets/info'
+import { Counter, Reveal, useInView } from '../components/motion'
 
 const byName = (filename) => propertyImages.find((item) => item.name === filename)
 const byPrefix = (prefix) => propertyImages.filter((item) => item.name.startsWith(prefix))
@@ -37,64 +38,12 @@ function RealtyImage({ filename, alt, className }) {
   )
 }
 
-function useInView(threshold = 0.15) {
-  const ref = useRef(null)
-  const [inView, setInView] = useState(false)
-  useEffect(() => {
-    const el = ref.current
-    if (!el) return
-    const obs = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { setInView(true); obs.disconnect() } },
-      { threshold }
-    )
-    obs.observe(el)
-    return () => obs.disconnect()
-  }, [threshold])
-  return [ref, inView]
-}
-
 const presentItem = (item, index) => ({
   id: `${item.name}-${index}`,
   title: item.title,
   description: item.description,
   imageName: item.name,
 })
-
-/* ─── tiny animated number counter ─── */
-function Counter({ to, suffix = '', duration = 1800 }) {
-  const [val, setVal] = useState(0)
-  const [ref, inView] = useInView(0.5)
-  useEffect(() => {
-    if (!inView) return
-    let start = null
-    const step = (ts) => {
-      if (!start) start = ts
-      const p = Math.min((ts - start) / duration, 1)
-      setVal(Math.floor(p * to))
-      if (p < 1) requestAnimationFrame(step)
-    }
-    requestAnimationFrame(step)
-  }, [inView, to, duration])
-  return <span ref={ref}>{val}{suffix}</span>
-}
-
-/* ─── section reveal wrapper ─── */
-function Reveal({ children, delay = 0, className = '' }) {
-  const [ref, inView] = useInView()
-  return (
-    <div
-      ref={ref}
-      className={className}
-      style={{
-        opacity: inView ? 1 : 0,
-        transform: inView ? 'translateY(0)' : 'translateY(36px)',
-        transition: `opacity 0.75s ease ${delay}ms, transform 0.75s cubic-bezier(.22,1,.36,1) ${delay}ms`,
-      }}
-    >
-      {children}
-    </div>
-  )
-}
 
 /* ─── image card with parallax-ish hover ─── */
 function HoverCard({ children, className = '' }) {
@@ -137,8 +86,6 @@ export default function RealtyPage() {
     <>
       {/* ── Google Fonts ── */}
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap');
-
         .realty-root {
           --bg-main: #F0E5C1;
           --bg-alt: #D4CFAE;
@@ -302,7 +249,7 @@ export default function RealtyPage() {
               { label: 'Sqm from', val: 28, suffix: '' },
             ].map((s) => (
               <div key={s.label} className="stat-card">
-                <div className="stat-num"><Counter to={s.val} suffix={s.suffix} /></div>
+                <div className="stat-num"><Counter to={s.val} suffix={s.suffix} duration={1800} /></div>
                 <div className="stat-label">{s.label}</div>
               </div>
             ))}
