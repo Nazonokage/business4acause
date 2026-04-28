@@ -4,11 +4,13 @@ export default function BusinessCard({ title, description, to }) {
   return (
     <Link
       to={to}
-      className="block rounded-2xl border border-[#8b5e3c29] bg-[#f5ecd7ad] p-7 text-inherit no-underline shadow-[0_6px_22px_rgba(60,36,21,0.08)] transition hover:-translate-y-1 hover:shadow-[0_14px_32px_rgba(60,36,21,0.13)]"
+      className="block rounded-3xl border border-sedona-chili/25 bg-sedona-mushroom/70 p-7 text-inherit no-underline shadow-[0_10px_28px_rgba(117,0,12,0.12)] backdrop-blur-sm transition hover:-translate-y-1 hover:border-sedona-chili/45 hover:shadow-[0_18px_36px_rgba(117,0,12,0.18)]"
     >
-      <h3 className="m-0 text-2xl text-[#3C2415]">{title}</h3>
-      <p className="mt-2 text-[rgba(60,36,21,0.74)]">{description}</p>
-      <span className="mt-3 inline-block font-bold text-[#6B4423]">Learn More</span>
+      <h3 className="m-0 text-4xl leading-tight text-sedona-burgundy">{title}</h3>
+      <p className="mt-3 text-[15px] leading-7 text-sedona-chili/90">{description}</p>
+      <span className="mt-4 inline-block font-semibold uppercase tracking-wider text-sedona-chili">
+        Learn More
+      </span>
     </Link>
   )
 }

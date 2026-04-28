@@ -118,7 +118,7 @@ export default function ParticlesBackground() {
         height: '100%',
         zIndex: -1,
         background:
-          'radial-gradient(circle at 18% 28%, rgba(107, 68, 35, 0.15) 0%, #F0E5C1 40%, #F5ECD7 100%)',
+          'radial-gradient(circle at 18% 28%, rgba(141, 38, 31, 0.15) 0%, #F0E5C1 40%, #D4CFAE 100%)',
         pointerEvents: 'none',
       }}
     />

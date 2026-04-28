@@ -2,13 +2,13 @@ import { Link, NavLink } from 'react-router-dom'
 
 export default function Navbar() {
   const baseLinkClass =
-    'inline-block rounded-lg border border-[#f5ecd733] bg-[#f5ecd714] px-4 py-2 text-sm font-medium text-[#F5ECD7] transition hover:-translate-y-0.5 hover:bg-[#f5ecd729] hover:border-[#f5ecd766]'
+    'inline-block rounded-full border border-sedona-mushroom/40 bg-sedona-mushroom/10 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-sedona-mushroom transition hover:-translate-y-0.5 hover:bg-sedona-mushroom/20 hover:border-sedona-mushroom/70'
 
   return (
-    <header className="sticky top-0 z-20 flex flex-col gap-3 border-y border-[#8b5e3c47] bg-[#8a493de6] px-4 py-3 shadow-[0_6px_16px_rgba(60,36,21,0.18)] backdrop-blur md:flex-row md:items-center md:justify-between md:px-5">
+    <header className="sticky top-0 z-20 flex flex-col gap-3 border-y border-sedona-chili/45 bg-gradient-to-r from-sedona-burgundy/95 to-sedona-chili/90 px-4 py-3 shadow-[0_12px_28px_rgba(117,0,12,0.25)] backdrop-blur md:flex-row md:items-center md:justify-between md:px-5">
       <Link
         to="/"
-        className="text-lg font-bold tracking-wide text-[#F5ECD7] no-underline [text-shadow:0_1px_2px_rgba(60,36,21,0.3)]"
+        className="text-lg font-bold tracking-wide text-sedona-mushroom no-underline [text-shadow:0_1px_2px_rgba(0,0,0,0.2)]"
       >
         AE Group of Companies
       </Link>
@@ -18,7 +18,7 @@ export default function Navbar() {
             <NavLink
               to="/realty"
               className={({ isActive }) =>
-                `${baseLinkClass} ${isActive ? 'bg-[#f5ecd733] border-[#f5ecd777]' : ''}`
+                `${baseLinkClass} ${isActive ? 'bg-sedona-mushroom/30 border-sedona-mushroom' : ''}`
               }
             >
               Philippine Scapes Realty
@@ -28,7 +28,7 @@ export default function Navbar() {
             <NavLink
               to="/food-trading"
               className={({ isActive }) =>
-                `${baseLinkClass} ${isActive ? 'bg-[#f5ecd733] border-[#f5ecd777]' : ''}`
+                `${baseLinkClass} ${isActive ? 'bg-sedona-mushroom/30 border-sedona-mushroom' : ''}`
               }
             >
               AE Food Trading
@@ -38,7 +38,7 @@ export default function Navbar() {
             <NavLink
               to="/about"
               className={({ isActive }) =>
-                `${baseLinkClass} ${isActive ? 'bg-[#f5ecd733] border-[#f5ecd777]' : ''}`
+                `${baseLinkClass} ${isActive ? 'bg-sedona-mushroom/30 border-sedona-mushroom' : ''}`
               }
             >
               About Us
@@ -48,7 +48,7 @@ export default function Navbar() {
             <NavLink
               to="/contact"
               className={({ isActive }) =>
-                `${baseLinkClass} ${isActive ? 'bg-[#f5ecd733] border-[#f5ecd777]' : ''}`
+                `${baseLinkClass} ${isActive ? 'bg-sedona-mushroom/30 border-sedona-mushroom' : ''}`
               }
             >
               Contact Us

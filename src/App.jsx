@@ -13,7 +13,7 @@ function App() {
     <BrowserRouter>
       <ParticlesBackground />
       <Navbar />
-      <main className="relative z-10 mx-auto min-h-screen w-full max-w-6xl px-3 pb-10 pt-6">
+      <main className="relative z-10 mx-auto min-h-screen w-full max-w-6xl px-3 pb-16 pt-6">
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/realty" element={<RealtyPage />} />

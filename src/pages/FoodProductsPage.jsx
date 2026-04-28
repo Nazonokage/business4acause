@@ -50,11 +50,11 @@ export default function FoodProductsPage() {
 
   return (
     <section className="px-6 pb-16 pt-14">
-      <div className="mx-auto max-w-5xl rounded-2xl border border-[#8b5e3c2e] bg-[#f5ecd7ad] p-8">
-        <h1 className="mb-4 text-[clamp(32px,5vw,48px)] font-bold text-[#3C2415]">
+      <div className="mx-auto max-w-5xl rounded-3xl border border-sedona-chili/25 bg-sedona-mushroom/70 p-8 shadow-[0_20px_50px_rgba(117,0,12,0.14)] backdrop-blur-sm">
+        <h1 className="mb-4 text-[clamp(42px,6vw,60px)] font-semibold leading-[1.02] text-sedona-burgundy">
           AE Food Trading Products
         </h1>
-        <p className="mb-3 leading-7 text-[rgba(60,36,21,0.8)]">
+        <p className="mb-3 leading-8 text-sedona-chili/90">
           Browse our current placeholder catalog below. Product names, images, and full specs will
           be replaced with finalized inventory details in the next update.
         </p>
@@ -71,7 +71,7 @@ export default function FoodProductsPage() {
           ))}
         </div>
 
-        <p className="mt-4 italic text-[rgba(60,36,21,0.7)]">
+        <p className="mt-4 italic text-sedona-chili/80">
           Need a specific item? Contact us and we can prepare a custom supply list.
         </p>
       </div>
