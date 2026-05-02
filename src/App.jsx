@@ -1,12 +1,14 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import ParticlesBackground from './components/ParticlesBackground'
 import Navbar from './components/Navbar'
+import HiddenFooter from './components/HiddenFooter'
 import LandingPage from './pages/LandingPage'
 import RealtyPage from './pages/RealtyPage'
 import FoodTradingPage from './pages/FoodTradingPage'
 import FoodProductsPage from './pages/FoodProductsPage'
 import AboutPage from './pages/AboutPage'
 import ContactPage from './pages/ContactPage'
+import EnvironmentalAwarenessPage from './pages/EnvironmentalAwarenessPage'
 
 function App() {
   return (
@@ -19,10 +21,12 @@ function App() {
           <Route path="/realty" element={<RealtyPage />} />
           <Route path="/food-trading" element={<FoodTradingPage />} />
           <Route path="/food-trading/products" element={<FoodProductsPage />} />
+          <Route path="/environmental-awareness" element={<EnvironmentalAwarenessPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
       </main>
+      <HiddenFooter />
     </BrowserRouter>
   )
 }

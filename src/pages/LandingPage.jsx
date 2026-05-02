@@ -215,6 +215,7 @@ export default function LandingPage() {
                   About Us
                 </Link>
                 <Link to="/realty" className="land-ghost">Explore Properties →</Link>
+                <Link to="/environmental-awareness" className="land-ghost">Environmental Awareness →</Link>
               </div>
             </div>
           </div>
