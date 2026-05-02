@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Counter, Reveal } from '../components/motion'
+import ImageLightbox from '../components/ImageLightbox'
 
 /* ── Hover card with 3D tilt ── */
 function HoverCard({ children, className = '' }) {
@@ -31,6 +32,7 @@ function HoverCard({ children, className = '' }) {
 
 export default function FoodTradingPage() {
   const [heroLoaded, setHeroLoaded] = useState(false)
+  const [activeImage, setActiveImage] = useState(null)
   useEffect(() => { setTimeout(() => setHeroLoaded(true), 80) }, [])
 
   return (
@@ -243,7 +245,13 @@ export default function FoodTradingPage() {
                     <img
                       src="https://images.unsplash.com/photo-1506617420156-8e4536971650?auto=format&fit=crop&w=800&q=80"
                       alt="Food trading products"
-                      className="ft-img"
+                      className="ft-img clickable-image"
+                      onClick={() =>
+                        setActiveImage({
+                          src: 'https://images.unsplash.com/photo-1506617420156-8e4536971650?auto=format&fit=crop&w=800&q=80',
+                          alt: 'Food trading products',
+                        })
+                      }
                     />
                   </div>
                   <div className="p-8 flex flex-col justify-center">
@@ -372,8 +380,14 @@ export default function FoodTradingPage() {
                     <img
                       src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80"
                       alt="Food distribution"
-                      className="ft-img"
+                      className="ft-img clickable-image"
                       style={{ aspectRatio: '4/3' }}
+                      onClick={() =>
+                        setActiveImage({
+                          src: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80',
+                          alt: 'Food distribution',
+                        })
+                      }
                     />
                   </div>
                 </div>
@@ -425,6 +439,8 @@ export default function FoodTradingPage() {
 
         </div>
       </div>
+
+      <ImageLightbox image={activeImage} onClose={() => setActiveImage(null)} />
     </>
   )
 }

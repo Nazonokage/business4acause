@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Counter, Reveal } from '../components/motion'
+import ImageLightbox from '../components/ImageLightbox'
 
 const images = {
   volunteer: '/New%20folder/volunteer_coastal_forest.jpg',
@@ -16,16 +17,6 @@ export default function EnvironmentalAwarenessPage() {
   useEffect(() => {
     setTimeout(() => setHeroLoaded(true), 80)
   }, [])
-
-  /* ESC key to close lightbox */
-  useEffect(() => {
-    if (!activeImage) return
-    const handleKeyDown = (e) => {
-      if (e.key === 'Escape') setActiveImage(null)
-    }
-    document.addEventListener('keydown', handleKeyDown)
-    return () => document.removeEventListener('keydown', handleKeyDown)
-  }, [activeImage])
 
   return (
     <>
@@ -74,7 +65,6 @@ export default function EnvironmentalAwarenessPage() {
         }
         .ea-img { width: 100%; object-fit: cover; display: block; aspect-ratio: 16/10; }
         .ea-img-click {
-          cursor: zoom-in;
           transition: transform 0.25s ease;
         }
         .ea-card:hover .ea-img-click { transform: scale(1.02); }
@@ -144,49 +134,6 @@ export default function EnvironmentalAwarenessPage() {
           box-shadow: 0 8px 30px rgba(117,0,12,0.3);
         }
         .ea-cta:hover { transform: translateY(-2px); box-shadow: 0 16px 48px rgba(141,38,31,0.38); }
-
-
-        .ea-lightbox {
-          position: fixed;
-          inset: 0;
-          z-index: 120;
-          background: rgba(35, 16, 10, 0.85);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          padding: 24px;
-          cursor: zoom-out;
-        }
-        .ea-lightbox-panel {
-          position: relative;
-          max-width: min(1100px, 95vw);
-          max-height: 92vh;
-          border-radius: 14px;
-          overflow: hidden;
-          border: 1px solid rgba(212,207,174,0.7);
-          box-shadow: 0 24px 70px rgba(0,0,0,0.45);
-          background: #20120d;
-        }
-        .ea-lightbox-img {
-          display: block;
-          width: 100%;
-          max-height: 92vh;
-          object-fit: contain;
-        }
-        .ea-lightbox-close {
-          position: absolute;
-          top: 10px;
-          right: 10px;
-          width: 34px;
-          height: 34px;
-          border: 0;
-          border-radius: 999px;
-          cursor: pointer;
-          background: rgba(32, 18, 13, 0.75);
-          color: #f0e5c1;
-          font-size: 18px;
-          line-height: 1;
-        }
 
         @keyframes fadeUp {
           from { opacity: 0; transform: translateY(28px); }
@@ -287,9 +234,9 @@ export default function EnvironmentalAwarenessPage() {
                       <img
                         src={activity.image}
                         alt={activity.title}
-                        className="ea-img ea-img-click"
+                        className="ea-img ea-img-click clickable-image"
                         loading="lazy"
-                        onClick={() => setActiveImage(activity)}
+                        onClick={() => setActiveImage({ src: activity.image, alt: activity.title })}
                         style={activity.square ? { aspectRatio: '1/1', objectPosition: 'center center' } : undefined}
                       />
                     </div>
@@ -332,21 +279,7 @@ export default function EnvironmentalAwarenessPage() {
         </div>
       </div>
 
-      {activeImage && (
-        <div className="ea-lightbox" onClick={() => setActiveImage(null)} role="presentation">
-          <div className="ea-lightbox-panel" onClick={(event) => event.stopPropagation()}>
-            <button
-              type="button"
-              className="ea-lightbox-close"
-              onClick={() => setActiveImage(null)}
-              aria-label="Close image preview"
-            >
-              ×
-            </button>
-            <img src={activeImage.image} alt={activeImage.title} className="ea-lightbox-img" />
-          </div>
-        </div>
-      )}
+      <ImageLightbox image={activeImage} onClose={() => setActiveImage(null)} />
     </>
   )
 }

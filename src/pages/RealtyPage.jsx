@@ -1,6 +1,7 @@
 import { useMemo, useState, useEffect, useRef } from 'react'
 import propertyImages from '../assets/info'
 import { Counter, Reveal, useInView } from '../components/motion'
+import ImageLightbox from '../components/ImageLightbox'
 
 const byName = (filename) => propertyImages.find((item) => item.name === filename)
 const byPrefix = (prefix) => propertyImages.filter((item) => item.name.startsWith(prefix))
@@ -22,7 +23,7 @@ const buildImageCandidates = (filename) => {
   ].filter((value, index, arr) => arr.indexOf(value) === index)
 }
 
-function RealtyImage({ filename, alt, className }) {
+function RealtyImage({ filename, alt, className, onImageClick }) {
   const candidates = useMemo(() => buildImageCandidates(filename), [filename])
   const [candidateIndex, setCandidateIndex] = useState(0)
   return (
@@ -31,6 +32,7 @@ function RealtyImage({ filename, alt, className }) {
       alt={alt}
       className={className}
       loading="lazy"
+      onClick={() => onImageClick?.({ src: candidates[candidateIndex], alt })}
       onError={() =>
         setCandidateIndex((c) => (c >= candidates.length - 1 ? c : c + 1))
       }
@@ -83,16 +85,6 @@ const sohoUnits = byPrefix('soho').map(presentItem)
   const [activeImage, setActiveImage] = useState(null)
 
   useEffect(() => { setTimeout(() => setHeroLoaded(true), 80) }, [])
-
-  /* ESC key to close lightbox */
-  useEffect(() => {
-    if (!activeImage) return
-    const handleKeyDown = (e) => {
-      if (e.key === 'Escape') setActiveImage(null)
-    }
-    document.addEventListener('keydown', handleKeyDown)
-    return () => document.removeEventListener('keydown', handleKeyDown)
-  }, [activeImage])
 
   return (
     <>
@@ -283,7 +275,12 @@ const sohoUnits = byPrefix('soho').map(presentItem)
                   <Reveal key={item.id} delay={i * 120}>
                     <HoverCard className="card-dark h-full">
                       <div className="img-shine">
-                        <RealtyImage filename={item.imageName} alt={item.title} className="img-cover" />
+                        <RealtyImage
+                          filename={item.imageName}
+                          alt={item.title}
+                          className="img-cover clickable-image"
+                          onImageClick={setActiveImage}
+                        />
                       </div>
                       <div className="p-6">
                         <div className="gold-line mb-3" />
@@ -312,7 +309,12 @@ const sohoUnits = byPrefix('soho').map(presentItem)
                 <HoverCard className="card-dark">
                   <div className="md:grid" style={{ gridTemplateColumns: '1.3fr 1fr' }}>
                     <div className="img-shine">
-                      <RealtyImage filename={amenities.name} alt={amenities.title} className="img-cover" />
+                      <RealtyImage
+                        filename={amenities.name}
+                        alt={amenities.title}
+                        className="img-cover clickable-image"
+                        onImageClick={setActiveImage}
+                      />
                     </div>
                     <div className="p-8 flex flex-col justify-center">
                       <div className="gold-line mb-4" />
@@ -348,7 +350,12 @@ const sohoUnits = byPrefix('soho').map(presentItem)
                       <p style={{ fontSize: 14, lineHeight: 1.9, color: 'rgba(141,38,31,0.85)' }}>{entranceRotunda.description}</p>
                     </div>
                     <div className="img-shine" style={{ order: 2 }}>
-                      <RealtyImage filename={entranceRotunda.name} alt={entranceRotunda.title} className="img-cover" />
+                      <RealtyImage
+                        filename={entranceRotunda.name}
+                        alt={entranceRotunda.title}
+                        className="img-cover clickable-image"
+                        onImageClick={setActiveImage}
+                      />
                     </div>
                   </div>
                 </HoverCard>
@@ -379,7 +386,12 @@ const sohoUnits = byPrefix('soho').map(presentItem)
                           style={{ gridTemplateColumns: '1fr 1.1fr' }}
                         >
                           <div className={`img-shine ${isRight ? 'md:order-2' : 'md:order-1'}`}>
-                            <RealtyImage filename={item.imageName} alt={item.title} className="img-cover" />
+                            <RealtyImage
+                              filename={item.imageName}
+                              alt={item.title}
+                              className="img-cover clickable-image"
+                              onImageClick={setActiveImage}
+                            />
                           </div>
                           <div
                             className={`p-7 flex flex-col justify-center ${isRight ? 'md:order-1' : 'md:order-2'}`}
@@ -435,6 +447,8 @@ const sohoUnits = byPrefix('soho').map(presentItem)
 
         </div>
       </div>
+
+      <ImageLightbox image={activeImage} onClose={() => setActiveImage(null)} />
     </>
   )
 }
