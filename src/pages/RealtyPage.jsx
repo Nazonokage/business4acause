@@ -77,10 +77,22 @@ export default function RealtyPage() {
     .filter(Boolean).map(presentItem)
   const amenities = byName('amenities-area.jpg')
   const entranceRotunda = byName('entrance-rotunda.jpg')
-  const sohoUnits = byPrefix('soho').map(presentItem)
+const sohoUnits = byPrefix('soho').map(presentItem)
 
   const [heroLoaded, setHeroLoaded] = useState(false)
+  const [activeImage, setActiveImage] = useState(null)
+
   useEffect(() => { setTimeout(() => setHeroLoaded(true), 80) }, [])
+
+  /* ESC key to close lightbox */
+  useEffect(() => {
+    if (!activeImage) return
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') setActiveImage(null)
+    }
+    document.addEventListener('keydown', handleKeyDown)
+    return () => document.removeEventListener('keydown', handleKeyDown)
+  }, [activeImage])
 
   return (
     <>

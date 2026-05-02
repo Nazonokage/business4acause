@@ -17,6 +17,16 @@ export default function EnvironmentalAwarenessPage() {
     setTimeout(() => setHeroLoaded(true), 80)
   }, [])
 
+  /* ESC key to close lightbox */
+  useEffect(() => {
+    if (!activeImage) return
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') setActiveImage(null)
+    }
+    document.addEventListener('keydown', handleKeyDown)
+    return () => document.removeEventListener('keydown', handleKeyDown)
+  }, [activeImage])
+
   return (
     <>
       <style>{`
