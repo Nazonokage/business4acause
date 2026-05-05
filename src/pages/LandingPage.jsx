@@ -16,6 +16,7 @@ export default function LandingPage() {
           --mushroom: #F0E5C1;
           font-family: 'DM Sans', sans-serif;
           color: var(--burgundy);
+          font-size: 1.05rem;
           min-height: 100vh;
         }
 

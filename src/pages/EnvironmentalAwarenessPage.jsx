@@ -28,6 +28,7 @@ export default function EnvironmentalAwarenessPage() {
           --mushroom: #F0E5C1;
           font-family: 'DM Sans', sans-serif;
           color: var(--burgundy);
+          font-size: 1.05rem;
           min-height: 100vh;
         }
 
@@ -267,7 +268,7 @@ export default function EnvironmentalAwarenessPage() {
             >
               <div className="ea-label mb-4 mx-auto" style={{ width: 'fit-content' }}>Get Involved</div>
               <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(30px,5vw,46px)', fontWeight: 300, color: 'var(--burgundy)', marginBottom: 8 }}>
-                Join Our <em style={{ color: 'var(--chili)', fontStyle: 'italic' }}>Awareness Activities</em>
+                Be one of our <em style={{ color: 'var(--chili)', fontStyle: 'italic' }}>Contributors</em>
               </h2>
               <p style={{ fontSize: 14, color: 'rgba(141,38,31,0.82)', marginBottom: 30, lineHeight: 1.8, maxWidth: 540, margin: '0 auto 30px' }}>
                 We believe meaningful environmental action happens through collaboration. Partner with us in creating cleaner and healthier coastlines for future generations.

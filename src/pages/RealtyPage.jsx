@@ -98,6 +98,7 @@ const sohoUnits = byPrefix('soho').map(presentItem)
           font-family: 'DM Sans', sans-serif;
           background: transparent;
           color: var(--ink-main);
+          font-size: 1.05rem;
           min-height: 100vh;
         }
 
@@ -261,12 +262,50 @@ const sohoUnits = byPrefix('soho').map(presentItem)
 
           <hr className="divider mb-10" />
 
+          {/* ── ABOUT + MISSION ── */}
+          <section className="mb-14">
+            <Reveal className="mb-7">
+              <div className="label-tag mb-3">01 - Foundation</div>
+              <h2 className="section-heading">About & <em>Mission</em></h2>
+            </Reveal>
+            <div className="grid gap-5 md:grid-cols-2">
+              <Reveal delay={60}>
+                <HoverCard className="card-dark h-full">
+                  <div className="p-7">
+                    <div className="gold-line mb-4" />
+                    <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 24, fontWeight: 400, color: 'var(--ink-main)', marginBottom: 10 }}>
+                      About Philippine Scapes Realty
+                    </h3>
+                    <p style={{ fontSize: 14, lineHeight: 1.9, color: 'rgba(141,38,31,0.85)' }}>
+                      Philippine Scapes Realty develops lifestyle-forward communities that blend modern architecture, practical investment value, and accessible urban convenience for families and professionals.
+                    </p>
+                  </div>
+                </HoverCard>
+              </Reveal>
+              <Reveal delay={140}>
+                <HoverCard className="card-dark h-full">
+                  <div className="p-7">
+                    <div className="gold-line mb-4" />
+                    <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 24, fontWeight: 400, color: 'var(--ink-main)', marginBottom: 10 }}>
+                      Mission for Avenir Iloilo
+                    </h3>
+                    <p style={{ fontSize: 14, lineHeight: 1.9, color: 'rgba(141,38,31,0.85)' }}>
+                      Our mission is to deliver refined, high-quality vertical living spaces in Iloilo City that support comfortable daily life, strong long-term property value, and a vibrant community experience.
+                    </p>
+                  </div>
+                </HoverCard>
+              </Reveal>
+            </div>
+          </section>
+
+          <hr className="divider mb-14" />
+
           {/* ── PROJECT OVERVIEW ── */}
           {projectOverview.length > 0 && (
             <section className="mb-14">
               <Reveal className="flex items-center gap-4 mb-7">
                 <div>
-                  <div className="label-tag mb-3">01 — Overview</div>
+                  <div className="label-tag mb-3">02 — Overview</div>
                   <h2 className="section-heading">The <em>Vision</em></h2>
                 </div>
               </Reveal>
@@ -301,7 +340,7 @@ const sohoUnits = byPrefix('soho').map(presentItem)
             <section className="mb-14">
               <Reveal className="flex items-center gap-4 mb-7">
                 <div>
-                  <div className="label-tag mb-3">02 — Lifestyle</div>
+                  <div className="label-tag mb-3">03 — Lifestyle</div>
                   <h2 className="section-heading">World-Class <em>Amenities</em></h2>
                 </div>
               </Reveal>
@@ -322,7 +361,7 @@ const sohoUnits = byPrefix('soho').map(presentItem)
                       <p style={{ fontSize: 14, lineHeight: 1.9, color: 'rgba(141,38,31,0.85)' }}>{amenities.description}</p>
                       <div style={{ marginTop: 24, display: 'flex', gap: 8, flexWrap: 'wrap' }}>
                         {['Pool Deck', 'Fitness Center', 'Sky Lounge', 'Co-working'].map((tag) => (
-                          <span key={tag} style={{ fontSize: 10, letterSpacing: '1.5px', textTransform: 'uppercase', padding: '5px 12px', border: '1px solid rgba(141,38,31,0.3)', borderRadius: 999, color: 'var(--ink-soft)', background: 'rgba(240,229,193,0.8)' }}>{tag}</span>
+                          <span key={tag} style={{ fontSize: 14, letterSpacing: '1.5px', textTransform: 'uppercase', padding: '5px 12px', border: '1px solid rgba(141,38,31,0.3)', borderRadius: 999, color: 'var(--ink-soft)', background: 'rgba(240,229,193,0.8)' }}>{tag}</span>
                         ))}
                       </div>
                     </div>
@@ -338,7 +377,7 @@ const sohoUnits = byPrefix('soho').map(presentItem)
           {entranceRotunda && (
             <section className="mb-14">
               <Reveal className="mb-7">
-                <div className="label-tag mb-3">03 — Arrival</div>
+                <div className="label-tag mb-3">04 — Arrival</div>
                 <h2 className="section-heading">The Grand <em>Entrance</em></h2>
               </Reveal>
               <Reveal delay={100}>
@@ -369,7 +408,7 @@ const sohoUnits = byPrefix('soho').map(presentItem)
           {sohoUnits.length > 0 && (
             <section className="mb-14">
               <Reveal className="mb-7">
-                <div className="label-tag mb-3">04 — Residences</div>
+                <div className="label-tag mb-3">05 — Residences</div>
                 <h2 className="section-heading">SOHO <em>Units</em></h2>
                 <p style={{ marginTop: 12, fontSize: 14, color: 'rgba(141,38,31,0.8)', maxWidth: 520, lineHeight: 1.8 }}>
                   Thoughtfully designed live-work spaces with contemporary finishes, optimized for modern urban professionals.
@@ -396,7 +435,7 @@ const sohoUnits = byPrefix('soho').map(presentItem)
                           <div
                             className={`p-7 flex flex-col justify-center ${isRight ? 'md:order-1' : 'md:order-2'}`}
                           >
-                            <span style={{ fontSize: 10, letterSpacing: '2px', color: 'rgba(141,38,31,0.8)', textTransform: 'uppercase', marginBottom: 8 }}>Unit {String(index + 1).padStart(2, '0')}</span>
+                            <span style={{ fontSize: 14, letterSpacing: '2px', color: 'rgba(141,38,31,0.8)', textTransform: 'uppercase', marginBottom: 8 }}>Unit {String(index + 1).padStart(2, '0')}</span>
                             <div className="gold-line mb-3" />
                             <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 24, fontWeight: 400, color: 'var(--ink-main)', marginBottom: 10 }}>{item.title}</h3>
                             <p style={{ fontSize: 14, lineHeight: 1.9, color: 'rgba(141,38,31,0.85)' }}>{item.description}</p>
@@ -409,6 +448,46 @@ const sohoUnits = byPrefix('soho').map(presentItem)
               </div>
             </section>
           )}
+
+          <hr className="divider mb-14" />
+
+          {/* ── LOCATION MAP ── */}
+          <section className="mb-14">
+            <Reveal className="mb-7">
+              <div className="label-tag mb-3">06 - Location</div>
+              <h2 className="section-heading">Find <em>Avenir Iloilo</em></h2>
+              <p style={{ marginTop: 12, fontSize: 14, color: 'rgba(141,38,31,0.8)', maxWidth: 560, lineHeight: 1.8 }}>
+                View the exact project location on the map and get a better sense of Avenir Iloilo's prime city access.
+              </p>
+            </Reveal>
+            <Reveal delay={100}>
+              <div
+                className="card-dark"
+                style={{ padding: 18, background: 'rgba(240,229,193,0.88)' }}
+              >
+                <iframe
+                  title="Avenir Iloilo Google Map"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3563.005503521913!2d122.53834957458285!3d10.709243889435479!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33aee51056d5e5ff%3A0x83f9c5d9032b0e4f!2sAvenir%20Iloilo!5e1!3m2!1sen!2sph!4v1777985621306!5m2!1sen!2sph"
+                  width="100%"
+                  height="420"
+                  style={{ border: 0, borderRadius: 12 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+                <div style={{ marginTop: 14, display: 'flex', justifyContent: 'flex-end' }}>
+                  <a
+                    href="https://maps.google.com/?q=Avenir%20Iloilo"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="ghost-btn"
+                  >
+                    Open in Google Maps -
+                  </a>
+                </div>
+              </div>
+            </Reveal>
+          </section>
 
           <hr className="divider mb-14" />
 

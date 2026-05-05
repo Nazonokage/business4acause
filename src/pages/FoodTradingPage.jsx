@@ -45,6 +45,7 @@ export default function FoodTradingPage() {
           --mushroom: #F0E5C1;
           font-family: 'DM Sans', sans-serif;
           color: var(--burgundy);
+          font-size: 1.05rem;
           min-height: 100vh;
         }
 
@@ -257,10 +258,10 @@ export default function FoodTradingPage() {
                   <div className="p-8 flex flex-col justify-center">
                     <div className="ft-gold-line mb-4" />
                     <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 26, fontWeight: 400, color: 'var(--burgundy)', marginBottom: 12 }}>
-                      Your Reliable Supply Partner
+                      About AE Food Trading
                     </h3>
                     <p style={{ fontSize: 14, lineHeight: 1.9, color: 'rgba(141,38,31,0.85)' }}>
-                      AE Food Trading works closely with businesses of all sizes — from sari-sari stores to food service establishments — providing a consistent, quality supply chain you can count on every month.
+                      AE Food Trading is the dedicated food distribution arm of AE Group of Companies, focused on sourcing and delivering quality pantry essentials and fast-moving food items for retail and food-service clients.
                     </p>
                     <div style={{ marginTop: 24, display: 'flex', gap: 8, flexWrap: 'wrap' }}>
                       {['Wholesale', 'Retail', 'Custom Orders', 'Monthly Supply'].map((tag) => (
@@ -275,10 +276,36 @@ export default function FoodTradingPage() {
 
           <hr className="ft-divider mb-14" />
 
+          {/* ── MISSION ── */}
+          <section className="mb-14">
+            <Reveal className="mb-7">
+              <div className="ft-label mb-3">02 — Mission</div>
+              <h2 className="ft-heading">Our Business <em>Mission</em></h2>
+            </Reveal>
+            <Reveal delay={100}>
+              <HoverCard className="ft-card">
+                <div style={{ padding: 28 }}>
+                  <div className="ft-gold-line mb-4" />
+                  <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 24, fontWeight: 400, color: 'var(--burgundy)', marginBottom: 12 }}>
+                    To Keep Communities Supplied
+                  </h3>
+                  <p style={{ fontSize: 14, lineHeight: 1.9, color: 'rgba(141,38,31,0.85)', marginBottom: 16 }}>
+                    Our mission is to provide dependable, fairly priced, and quality-assured food products that help local stores, restaurants, and resellers serve their customers consistently.
+                  </p>
+                  <p style={{ fontSize: 14, lineHeight: 1.9, color: 'rgba(141,38,31,0.82)' }}>
+                    We build long-term partnerships through responsive service, ethical sourcing, and delivery reliability that businesses can trust every order cycle.
+                  </p>
+                </div>
+              </HoverCard>
+            </Reveal>
+          </section>
+
+          <hr className="ft-divider mb-14" />
+
           {/* ── WHY CHOOSE US ── */}
           <section className="mb-14">
             <Reveal className="mb-7">
-              <div className="ft-label mb-3">02 — Why Us</div>
+              <div className="ft-label mb-3">03 — Why Us</div>
               <h2 className="ft-heading">Why Businesses Choose <em>AE Food Trading</em></h2>
               <p style={{ marginTop: 12, fontSize: 14, color: 'rgba(141,38,31,0.8)', maxWidth: 520, lineHeight: 1.8 }}>
                 Our partners stay with us because we deliver on what matters most — quality, consistency, and trust.
@@ -356,7 +383,7 @@ export default function FoodTradingPage() {
           {/* ── SERVICE COVERAGE ── */}
           <section className="mb-14">
             <Reveal className="mb-7">
-              <div className="ft-label mb-3">03 — Coverage</div>
+              <div className="ft-label mb-3">04 — Coverage</div>
               <h2 className="ft-heading">Service <em>Coverage</em></h2>
             </Reveal>
             <Reveal delay={100}>
