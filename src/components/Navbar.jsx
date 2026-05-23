@@ -82,10 +82,10 @@ export default function Navbar() {
             </div>
             <div className="flex flex-col leading-tight">
               <span className="font-['Playfair_Display',serif] font-semibold text-[15px] text-[#F0E5C1] tracking-[0.01em]">
-                Business 4 a Cause
+                UgyunKita
               </span>
               <span className="text-[10px] font-medium tracking-[0.18em] uppercase text-[#D4CFAE] opacity-75">
-                Making an impact
+                Official website
               </span>
             </div>
           </Link>
