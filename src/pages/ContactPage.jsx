@@ -1,3 +1,5 @@
+import PageMeta from '../components/PageMeta'
+
 export default function ContactPage() {
   const copy = (text) => navigator.clipboard.writeText(text)
 
@@ -28,6 +30,11 @@ export default function ContactPage() {
 
   return (
     <section className="min-h-screen px-6 pb-20 pt-14">
+      <PageMeta
+        title="Contact UgyunKita | Realty & Food Trading Enquiries"
+        description="Contact AE Group of Companies for Philippine Scapes Realty, AE Food Trading, and general enquiries — email, phone, and social links."
+        path="/contact"
+      />
       <div className="mx-auto max-w-2xl">
 
         {/* Header */}

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Counter, Reveal } from '../components/motion'
+import PageMeta from '../components/PageMeta'
 
 export default function LandingPage() {
   const [heroLoaded, setHeroLoaded] = useState(false)
@@ -8,6 +9,11 @@ export default function LandingPage() {
 
   return (
     <>
+      <PageMeta
+        title="UgyunKita | Philippine Realty & Food Trading Philippines"
+        description="UgyunKita official website — Philippine Scapes Realty, AE Food Trading, and environmental awareness initiatives across the Philippines."
+        path="/"
+      />
       <style>{`
         .land-root {
           --burgundy: #75000C;

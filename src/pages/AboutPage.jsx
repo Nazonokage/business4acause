@@ -1,6 +1,13 @@
+import PageMeta from '../components/PageMeta'
+
 export default function AboutPage() {
   return (
     <section id="about" className="px-6 pb-16 pt-14">
+      <PageMeta
+        title="About UgyunKita | AE Group of Companies Philippines"
+        description="About AE Group of Companies — Philippine Scapes Realty and AE Food Trading united by quality, integrity, and community-focused service."
+        path="/about"
+      />
       <div className="mx-auto max-w-4xl rounded-3xl border border-sedona-chili/25 bg-sedona-mushroom/70 p-8 shadow-[0_20px_50px_rgba(117,0,12,0.14)] backdrop-blur-sm">
         <h1 className="mb-4 text-[clamp(42px,6vw,60px)] font-semibold leading-[1.02] text-sedona-burgundy">
           About Us

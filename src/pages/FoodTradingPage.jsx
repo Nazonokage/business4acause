@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Counter, Reveal } from '../components/motion'
 import ImageLightbox from '../components/ImageLightbox'
+import PageMeta from '../components/PageMeta'
 
 /* ── Hover card with 3D tilt ── */
 function HoverCard({ children, className = '' }) {
@@ -37,6 +38,11 @@ export default function FoodTradingPage() {
 
   return (
     <>
+      <PageMeta
+        title="AE Food Trading | Wholesale & Retail Food Supply | UgyunKita"
+        description="AE Food Trading delivers reliable wholesale and retail food supply, flexible fulfillment, and quality handling for partners across the Philippines."
+        path="/food-trading"
+      />
       <style>{`
         .ft-root {
           --burgundy: #75000C;

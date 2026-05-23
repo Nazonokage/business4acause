@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Counter, Reveal } from '../components/motion'
 import ImageLightbox from '../components/ImageLightbox'
+import PageMeta from '../components/PageMeta'
 
 const images = {
   volunteer: '/New%20folder/volunteer_coastal_forest.jpg',
@@ -20,6 +21,11 @@ export default function EnvironmentalAwarenessPage() {
 
   return (
     <>
+      <PageMeta
+        title="Environmental Awareness & Community Programs | UgyunKita"
+        description="Learn about UgyunKita environmental awareness initiatives, coastal clean-ups, volunteer programs, and community sustainability efforts."
+        path="/environmental-awareness"
+      />
       <style>{`
         .ea-root {
           --burgundy: #75000C;

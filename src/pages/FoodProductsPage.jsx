@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import ProductCard from '../components/ProductCard'
 import ProductModal from '../components/ProductModal'
+import PageMeta from '../components/PageMeta'
 
 const placeholderProducts = [
   {
@@ -50,6 +51,11 @@ export default function FoodProductsPage() {
 
   return (
     <section className="px-6 pb-16 pt-14">
+      <PageMeta
+        title="AE Food Trading Products | Wholesale Food Catalog | UgyunKita"
+        description="Browse AE Food Trading product catalog for wholesale and retail partners — staple goods, cooking oil, canned goods, and snack assortments."
+        path="/food-trading/products"
+      />
       <div className="mx-auto max-w-5xl rounded-3xl border border-sedona-chili/25 bg-sedona-mushroom/70 p-8 shadow-[0_20px_50px_rgba(117,0,12,0.14)] backdrop-blur-sm">
         <h1 className="mb-4 text-[clamp(42px,6vw,60px)] font-semibold leading-[1.02] text-sedona-burgundy">
           AE Food Trading Products
