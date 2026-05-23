@@ -69,22 +69,31 @@ export default function Navbar() {
         {/* Subtle diagonal grain overlay */}
         <div className="absolute inset-0 pointer-events-none bg-[repeating-linear-gradient(-55deg,transparent,transparent_3px,rgba(255,255,255,0.012)_3px,rgba(255,255,255,0.012)_4px)]" />
         
-        <div className="flex items-center justify-between gap-4 px-5 h-[60px]">
+        <div className="flex items-center justify-between gap-4 px-5 md:px-6 h-[68px]">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2.5 shrink-0 group">
-            <div className="w-8 h-8 rounded-lg border border-[rgba(240,229,193,0.35)] bg-[rgba(240,229,193,0.1)] flex items-center justify-center transition-all duration-200 group-hover:bg-[rgba(240,229,193,0.18)] group-hover:border-[rgba(240,229,193,0.5)]">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path 
+          <Link
+            to="/"
+            className="flex items-center gap-3.5 md:gap-4 shrink-0 group py-1 pr-2 -ml-1 rounded-xl transition-colors duration-200 hover:bg-[rgba(240,229,193,0.06)]"
+            aria-label="UgyunKita home"
+          >
+            <div className="w-11 h-11 md:w-12 md:h-12 rounded-xl border border-[rgba(240,229,193,0.38)] bg-[rgba(240,229,193,0.12)] flex items-center justify-center shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] transition-all duration-200 group-hover:bg-[rgba(240,229,193,0.2)] group-hover:border-[rgba(240,229,193,0.55)] group-hover:shadow-[0_4px_14px_rgba(0,0,0,0.18)]">
+              <svg
+                className="w-5 h-5 md:w-[22px] md:h-[22px] transition-transform duration-200 group-hover:scale-105"
+                viewBox="0 0 16 16"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
                   d="M8 2C5 2 2.5 4.5 2.5 8c0 2.8 1.7 5.2 4 6.3V8.5L8 5l1.5 3.5v5.8c2.3-1.1 4-3.5 4-6.3C13.5 4.5 11 2 8 2Z"
-                  fill="rgba(240,229,193,0.7)" 
+                  fill="rgba(240,229,193,0.82)"
                 />
               </svg>
             </div>
-            <div className="flex flex-col leading-tight">
-              <span className="font-['Playfair_Display',serif] font-semibold text-[15px] text-[#F0E5C1] tracking-[0.01em]">
+            <div className="flex flex-col justify-center gap-1 min-w-0">
+              <span className="font-['Playfair_Display',serif] font-semibold text-[17px] md:text-[18px] text-[#F0E5C1] tracking-[0.02em] leading-none">
                 UgyunKita
               </span>
-              <span className="text-[10px] font-medium tracking-[0.18em] uppercase text-[#D4CFAE] opacity-75">
+              <span className="text-[10px] md:text-[10.5px] font-medium tracking-[0.2em] uppercase text-[#D4CFAE] opacity-80 leading-none pt-0.5">
                 Official website
               </span>
             </div>
